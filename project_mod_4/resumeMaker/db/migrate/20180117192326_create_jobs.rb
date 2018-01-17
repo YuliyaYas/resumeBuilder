@@ -4,8 +4,8 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :employer
       t.string :location
-      t.string :start_date
-      t.string :end_date
+      t.date :start_date
+      t.date :end_date
       t.string :description
       t.belongs_to :resume, foreign_key: true
 

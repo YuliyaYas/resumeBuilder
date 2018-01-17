@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180117192524) do
     t.string "location"
     t.string "degree"
     t.string "major"
-    t.string "year"
+    t.integer "year"
     t.bigint "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20180117192524) do
     t.string "title"
     t.string "employer"
     t.string "location"
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.string "description"
     t.bigint "resume_id"
     t.datetime "created_at", null: false
