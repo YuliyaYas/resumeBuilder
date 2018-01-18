@@ -2,6 +2,7 @@ class ResumesController < ApplicationController
 
   def index
     @resumes = Resume.all
+    # byebug
     render json: @resumes
   end
   def create
