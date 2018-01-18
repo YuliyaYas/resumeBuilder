@@ -1,3 +1,3 @@
 class TemplateSerializer < ActiveModel::Serializer
-  attributes :id, :name, :resumes
+  attributes :id, :name
 end
