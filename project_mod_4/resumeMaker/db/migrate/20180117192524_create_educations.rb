@@ -5,7 +5,7 @@ class CreateEducations < ActiveRecord::Migration[5.1]
       t.string :location
       t.string :degree
       t.string :major
-      t.integer :year
+      t.integer :graduation_year
       t.belongs_to :resume, foreign_key: true
 
       t.timestamps

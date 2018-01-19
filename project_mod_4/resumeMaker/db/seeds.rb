@@ -18,5 +18,5 @@ job1 = Job.create(title: "account execute", employer: "Alpha Flight Guru", locat
 job2 = Job.create(title: "manager", employer: "Beta Flight Guru", location: "New York", start_date: "2015-12-13", end_date: "2017-12-13", description: "making calls", resume_id: 1)
 
 
-education1 = Education.create(school: "CUNY", location: "New York", degree: "BS", major: "engineering", year: "2017", resume_id: 1)
-education2 = Education.create(school: "NYU", location: "New York", degree: "BS", major: "engineering", year: "2017", resume_id: 1)
+education1 = Education.create(school: "CUNY", location: "New York", degree: "BS", major: "engineering", graduation_year: "2017", resume_id: 1)
+education2 = Education.create(school: "NYU", location: "New York", degree: "BS", major: "engineering", graduation_year: "2017", resume_id: 1)

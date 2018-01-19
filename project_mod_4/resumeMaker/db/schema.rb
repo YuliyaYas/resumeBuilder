@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180117192524) do
     t.string "location"
     t.string "degree"
     t.string "major"
-    t.string "year"
+    t.string "graduation_year"
     t.bigint "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
