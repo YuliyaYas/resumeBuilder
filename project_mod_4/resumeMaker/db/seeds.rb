@@ -11,7 +11,7 @@ template1 = Template.create(name: "black&white")
 template2 = Template.create(name: "color")
 
 resume1 = Resume.create(name: "My Resume", first_name: "Cory", last_name: "Baker", location: "New York, NY", phone: "501-555-4586", email: "coryb08@yahoo.com", website: "www.corydbaker.com", skills: "absolutely no skills", summary: "summary goes here", template_id: 1)
-resume2 = Resume.create(name: "My  other Resume", first_name: "Doug", last_name: "Baker", location: "New York, NY", phone: "501-555-4586", email: "coryb08@yahoo.com", website: "www.corydbaker.com", skills: "absolutely no skills", summary: "summary goes here", template_id: 2)
+resume2 = Resume.create(name: "My  other Resume", first_name: "Baker", last_name: "Baker", location: "New York, NY", phone: "501-555-4586", email: "coryb08@yahoo.com", website: "www.corydbaker.com", skills: "absolutely no skills", summary: "summary goes here", template_id: 2)
 
 
 job1 = Job.create(title: "account execute", employer: "Alpha Flight Guru", location: "New York", start_date: "2013-12-13", end_date: "2017-12-13", description: "making calls", resume_id: 1)

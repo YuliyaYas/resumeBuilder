@@ -8,17 +8,14 @@ class ResumesController < ApplicationController
 
   def create
     @resume = Resume.create(resume_params)
-    
+
     # @resume.add_jobs(params[:jobs])
     job_params[:jobs].each do |job|
       @resume.jobs.create(job)
-      # (title: job[:title], employer: job[:employer], location: job[:location], start_date: job[:start_date], end_date: job[:end_date], description: job[:description])
-
     end
 
     educations_params[:educations].each do |education|
       @resume.educations.create(education)
-      # (school: education[:school], location: education[:location], degree: education [:degree], major: education[:major], graduation_year: education[:graduation_year])
     end
 
     render json: @resume
@@ -28,14 +25,30 @@ class ResumesController < ApplicationController
     @resume = Resume.find(params[:id])
     render json: @resume
   end
+
   def update
     @resume = Resume.find(params[:id])
+    job_params[:jobs].each do |job|
+      @resume.jobs.update(job)
+    end
+
+    educations_params[:educations].each do |education|
+      @resume.educations.update(education)
+    end
     render json: @resume
   end
+
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
     @resumes = Resume.all
+    job_params[:jobs].each do |job|
+      @resume.jobs.destroy(job)
+    end
+
+    educations_params[:educations].each do |education|
+      @resume.educations.destroy(education)
+    end
     render json: @resumes
   end
 
