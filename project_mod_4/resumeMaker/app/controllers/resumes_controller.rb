@@ -39,16 +39,20 @@ class ResumesController < ApplicationController
   end
 
   def destroy
-    @resume = Resume.find(params[:id])
+    #@resumes = Resume.all
+    @resume = Resume.all.find(params[:id])
+    # byebug
     @resume.destroy
-    @resumes = Resume.all
-    job_params[:jobs].each do |job|
-      @resume.jobs.destroy(job)
-    end
+    # @resume.jobs.each { |j| j.destroy}
+    # @resume.educations.each { |e| e.destroy}
 
-    educations_params[:educations].each do |education|
-      @resume.educations.destroy(education)
-    end
+    # job_params[:jobs].each do |job|
+    #   @resume.jobs.destroy(job)
+    # end
+    #
+    # educations_params[:educations].each do |education|
+    #   @resume.educations.destroy(education)
+    # end
     render json: @resumes
   end
 
