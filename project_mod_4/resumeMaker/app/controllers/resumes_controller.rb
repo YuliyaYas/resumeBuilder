@@ -27,6 +27,7 @@ class ResumesController < ApplicationController
   end
 
   def update
+    # byebug
     @resume = Resume.find(params[:id])
     job_params[:jobs].each do |job|
       @resume.jobs.update(job)
@@ -35,7 +36,10 @@ class ResumesController < ApplicationController
     educations_params[:educations].each do |education|
       @resume.educations.update(education)
     end
-    render json: @resume
+
+    @resume.update(resume_params)
+    
+    render json: @resume, include: [:jobs, :educations]
   end
 
   def destroy
@@ -43,16 +47,7 @@ class ResumesController < ApplicationController
     @resume = Resume.all.find(params[:id])
     # byebug
     @resume.destroy
-    # @resume.jobs.each { |j| j.destroy}
-    # @resume.educations.each { |e| e.destroy}
 
-    # job_params[:jobs].each do |job|
-    #   @resume.jobs.destroy(job)
-    # end
-    #
-    # educations_params[:educations].each do |education|
-    #   @resume.educations.destroy(education)
-    # end
     render json: @resumes
   end
 
