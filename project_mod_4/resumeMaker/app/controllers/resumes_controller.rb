@@ -38,7 +38,6 @@ class ResumesController < ApplicationController
     end
 
     @resume.update(resume_params)
-    
     render json: @resume, include: [:jobs, :educations]
   end
 
