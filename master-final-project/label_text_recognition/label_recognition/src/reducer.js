@@ -64,6 +64,9 @@ const getAllSearches = (state = [], action) => {
   switch(action.type){
     case 'SET_SEARCH_RESULTS':
       return action.results
+    case 'ERROR_SEARCH_RESULTS':
+      debugger
+      return action.error
     default:
      return state
   }

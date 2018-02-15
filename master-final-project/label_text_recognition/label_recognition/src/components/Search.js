@@ -56,7 +56,7 @@ render(){
         <div className="ui center aligned container">
         <div className="ui three column grid">
             <div className="column">
-            <a href={`${this.props.name}`} className="circular ui large icon blue basic button" onClick={this.capture}>
+            <a href={`/${this.props.name}`} className="circular ui large icon blue basic button" onClick={this.capture}>
               <i className="camera retro icon"></i>
             </a>
             </div>

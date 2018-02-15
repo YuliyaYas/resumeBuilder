@@ -40,7 +40,7 @@ import withAuth from '../hocs/withAuth';
   }
 
   refreshPage(){
-    window.location.pathname = `/${this.props.user}`;
+    window.location.pathname = window.location.pathname;
   }
 
   search = (e) => {
@@ -97,16 +97,21 @@ import withAuth from '../hocs/withAuth';
           width={350}
         /> }
         <br />
-        {this.state.error ? <div className="ui blue camera message">Please try again! Unable to read the text</div> : ""}
+        {(this.state.error || (this.props.error === true)) ? <div className="ui blue camera message">Please try again! Unable to read the text</div> : ""}
         {this.state.clicked
           ?
           <div className="ui inverted vertical footer segment">
             <div className="ui center aligned container">
-            <div className="ui two column grid">
+            <div className="ui three column grid">
                 <div className="column">
                 <button className="circular ui large icon red basic button" onClick={this.refreshPage}>
                   <i className="undo red icon"></i>
                 </button>
+                </div>
+                <div className="column">
+                <Link to={`/${this.props.user}/images`} className="circular ui large icon blue basic button">
+                  <i className="grid layout icon"></i>
+                </Link>
                 </div>
                 <div className="column">
                 <Link to={`/${this.props.user}/search`} className="circular ui large icon green basic button" onClick={this.search}>
@@ -144,7 +149,8 @@ const mapStateToProps = (state) => {
   return {
     img: state.img,
     imageText: state.imageText,
-    user: state.auth.currentUser.username
+    user: state.auth.currentUser.username,
+    error: state.googleSearch
   }
 }
 
